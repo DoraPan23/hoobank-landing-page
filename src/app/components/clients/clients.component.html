@@ -1,0 +1,9 @@
+<section [ngClass]="styles.flexCenter" class="my-4">
+    <div [ngClass]="styles.flexCenter" class="flex-wrap w-full">
+        <ng-container *ngFor="let item of clients">
+            <div [ngClass]="styles.flexCenter" class="flex-1 sm:min-w-[192px] min-w-[120px]">
+                <img [src]="item.logo" alt="logo" class="sm:w-[192px] w-[100px] h-[60px] object-contain logo-client">
+            </div>
+        </ng-container>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<nav class="w-full flex py-6 justify-between items-center navbar">
+    <img src="../../../assets/logo.svg" alt="hoobank" class="w-[124px] h-[32px]" />
+    <ul class="list-none sm:flex hidden justify-end items-center flex-1">
+        <ng-container *ngFor="let item of navLinks; last as last">
+            <li class="text-white font-poppins font-normal cursor-pointer text-[16px] mr-10" [class.mr-0]="last">
+                <a href="#{{item.id}}">{{item.title}}</a>
+            </li>
+        </ng-container>
+    </ul>
+
+    <div class="sm:hidden flex flex-1 justify-end items-center">
+        <img [src]="toggle ? '../../../assets/close.svg' : '../../../assets/menu.svg'" alt="close"
+            class="w-[28px] h-[28px] object-contain" (click)="toggle = !toggle" />
+
+        <div [class]="toggle ? 'flex' : 'hidden'"
+            class="p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar">
+            <ul class="list-none flex flex-col justify-end items-center flex-1">
+                <ng-container *ngFor="let item of navLinks; last as last">
+                    <li class="text-white font-poppins font-normal cursor-pointer text-[16px] mb-4" [class.mr-0]="last">
+                        <a href="#{{item.id}}">{{item.title}}</a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</nav>

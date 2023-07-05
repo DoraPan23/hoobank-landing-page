@@ -1,0 +1,16 @@
+<section [ngClass]="styles.flexCenter" class="flex-row flex-wrap sm:mb-20 mb-6">
+    <ng-container *ngFor="let item of stats; last as last">
+        <div class="flex-1 flex items-center justify-around">
+            <div class="flex justify-start items-center flex-row m-3">
+                <h4
+                    class="font-poppins text-white font-semibold xs:text-[40px] text-[30px] xs:leading-[53px] leading-[43px]">
+                    {{ item.value }}
+                </h4>
+                <p
+                    class="text-gradient font-poppins font-normal xs:text-[20px] text-[15px] xs:leading-[26px] leading-[21px] ml-3">
+                    {{ item.title }}</p>
+            </div>
+            <span *ngIf="!last" class="text-white md:contents hidden">|</span>
+        </div>
+    </ng-container>
+</section>

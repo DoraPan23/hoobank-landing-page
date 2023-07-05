@@ -1,0 +1,27 @@
+<section id="features" [ngClass]="layout.section">
+    <div [ngClass]="layout.sectionInfo">
+        <h2 [ngClass]="styles.heading2">You do the business <br class="sm:block hidden">We'll handle the money</h2>
+        <p [ngClass]="styles.paragraph" class="max-w-[470px] mt-5">
+            With the right credit card, you can improve your financial life by building credit, earning rewards and
+            saving money. But with hundreds of credit cards on the market.
+        </p>
+        <app-button [style]="'mt-10'"></app-button>
+    </div>
+
+    <div [ngClass]="layout.sectionImg" class="flex-col">
+        <ng-container *ngFor="let item of features; last as last">
+            <div [ngClass]="!last ? 'mb-6' : 'mb-0'" class="flex flex-row p-6 rounded-[20px] feature-card">
+                <div [ngClass]="styles.flexCenter" class="w-[64px] h-[64px] rounded-full bg-dimBlue">
+                    <img class="w-[50%] h-[50%] object-contain" [src]="item.icon" alt="icon">
+                </div>
+                <div class="flex-1 flex flex-col ml-3">
+                    <h4 class="font-poppins font-semibold text-white text-[18px] leading-[23px] mb-1">
+                        {{item.title}}
+                    </h4>
+                    <p class="font-poppins font-normal text-dimWhite text-[16px] leading-[24px] mb-1">{{item.content}}
+                    </p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</section>
